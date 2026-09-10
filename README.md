@@ -1,46 +1,28 @@
-# Astro Starter Kit: Basics
+# Personal Data Science Portfolio Web
 
-```sh
-npm create astro@latest -- --template basics
-```
+Personal portfolio website showcasing end-to-end Data Science, Machine Learning, and Data Analytics projects, built with high performance and minimal footprint using **Astro**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## Tech Stack
+* **Framework:** [Astro](https://astro.build/)
+* **Languages:** Astro, TypeScript / JavaScript, CSS
+* **Deployment Target:** Vercel / GitHub Pages
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
+## Featured Projects Showcased
+* **Rainfall Prediction in Australia:** End-to-end CRISP-DM classification pipeline with LightGBM.
+* **Gaming & Mental Health:** Exploratory Data Analysis auditing lifestyle independence and behavioral metrics.
+
+---
+
+## Project Structure
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+├── public/          # Static assets (images, icons, CV)
+├── src/
+│   ├── components/  # Reusable UI components (Project cards, Hero, Skills)
+│   ├── layouts/     # Base page layout structure
+│   └── pages/       # Routing and page views (index.astro)
+├── astro.config.mjs # Astro configuration
+└── package.json     # Project scripts and dependencies
