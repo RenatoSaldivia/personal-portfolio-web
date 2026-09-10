@@ -1,0 +1,86 @@
+<header class="header">
+  <nav class="header__nav">
+    <a href="/" class="header__logo" aria-label="Renato Saldivia">
+      <span class="header__logo-brace">&#123;</span>
+      RS
+      <span class="header__logo-brace">&#125;</span>
+    </a>
+
+    <div class="header__links">
+      <a href="/" class="header__link">Inicio</a>
+      <a href="#habilidades" class="header__link">Habilidades</a>
+      <a href="#proyectos" class="header__link">Proyectos</a>
+      <a href="#contacto" class="header__link">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    color: white;
+    border-bottom: 1px solid #1e293b;
+  }
+
+  .header__nav {
+    width: min(1200px, calc(100% - 4rem));
+    margin: 0 auto;
+    padding: 1.25rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .header__logo-brace {
+    color: #60a5fa;
+  }
+
+  .header__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .header__link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .header__link:hover {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .header__nav {
+      padding: 1rem 1.5rem;
+    }
+
+    .header__links {
+      gap: 1rem;
+    }
+
+    .header__link {
+      font-size: 0.9rem;
+    }
+  }
+</style>

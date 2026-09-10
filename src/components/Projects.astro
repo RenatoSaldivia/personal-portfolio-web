@@ -1,0 +1,101 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<section class="projects" id="proyectos">
+  <div class="projects__content">
+    <p class="projects__eyebrow">Proyectos</p>
+
+    <h2>Lo que estoy construyendo</h2>
+
+    <p class="projects__description">
+      Una selección de proyectos que muestran lo que estoy aprendiendo y
+      desarrollando.
+    </p>
+
+    <div class="projects__grid">
+      <ProjectCard
+        title="Weather Data Analysis"
+        description="Análisis y preparación de datos meteorológicos australianos utilizando la metodología CRISP-DM, con énfasis en limpieza, transformación y exploración de los datos."
+        image="/images/projects/weather-analysis.png"
+        technologies={[
+          "Python",
+          "Pandas",
+          "NumPy",
+          "Matplotlib",
+          "Seaborn",
+          "Scikit-learn",
+        ]}
+        github="https://github.com/RenatoSaldivia/australia-weather-data-analysis"
+      />
+      <ProjectCard
+        title="Gaming & Mental Health Data Analysis"
+        description="Análisis exploratorio de datos sobre hábitos de gaming y su relación con indicadores de salud mental, utilizando Python y datos reales."
+        image="/images/projects/gaming-analysis.png"
+        technologies={[
+          "Python",
+          "Pandas",
+          "NumPy",
+          "Matplotlib",
+          "Seaborn",
+          "Scikit-learn",
+        ]}
+        github="https://github.com/RenatoSaldivia/gaming-mental-health-data-analysis"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    padding: 6rem 2rem;
+    background: #0f172a;
+    color: white;
+  }
+
+  .projects__content {
+    width: min(1200px, calc(100% - 4rem));
+    margin: 0 auto;
+  }
+
+  .projects__eyebrow {
+    color: #60a5fa;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .projects h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .projects__description {
+    max-width: 700px;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .projects__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .projects {
+      padding: 5rem 1.5rem;
+    }
+
+    .projects__content {
+      width: 100%;
+    }
+
+    .projects__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
