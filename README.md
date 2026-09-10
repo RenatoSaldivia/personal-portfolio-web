@@ -31,7 +31,7 @@ Personal portfolio website showcasing end-to-end Data Science, Machine Learning,
 ## Getting Started Locally
 - Clone the repository:
     ```Bash
-    git clone [https://github.com/RenatoSaldivia/personal-portfolio-web.git](https://github.com/RenatoSaldivia/personal-portfolio-web.git)
+    git clone https://github.com/RenatoSaldivia/personal-portfolio-web.git
     ```
 - Install dependencies:
     ```Bash
