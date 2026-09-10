@@ -26,3 +26,22 @@ Personal portfolio website showcasing end-to-end Data Science, Machine Learning,
 │   └── pages/       # Routing and page views (index.astro)
 ├── astro.config.mjs # Astro configuration
 └── package.json     # Project scripts and dependencies
+```
+
+## Getting Started Locally
+- Clone the repository:
+    ```Bash
+    git clone [https://github.com/RenatoSaldivia/personal-portfolio-web.git](https://github.com/RenatoSaldivia/personal-portfolio-web.git)
+    ```
+- Install dependencies:
+    ```Bash
+    npm install
+    ```
+- Start the local development server:
+    ```Bash
+    npm run dev
+    ```
+- Build for production:
+    ```Bash
+    npm run build
+    ```
