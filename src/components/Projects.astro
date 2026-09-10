@@ -1,5 +1,7 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <section class="projects" id="proyectos">
@@ -17,7 +19,7 @@ import ProjectCard from "../components/ProjectCard.astro";
       <ProjectCard
         title="Weather Data Analysis"
         description="Análisis y preparación de datos meteorológicos australianos utilizando la metodología CRISP-DM, con énfasis en limpieza, transformación y exploración de los datos."
-        image="/images/projects/weather-analysis.png"
+        image={`${base}/images/projects/weather-analysis.png`}
         technologies={[
           "Python",
           "Pandas",
@@ -31,7 +33,7 @@ import ProjectCard from "../components/ProjectCard.astro";
       <ProjectCard
         title="Gaming & Mental Health Data Analysis"
         description="Análisis exploratorio de datos sobre hábitos de gaming y su relación con indicadores de salud mental, utilizando Python y datos reales."
-        image="/images/projects/gaming-analysis.png"
+        image={`${base}/images/projects/gaming-analysis.png`}
         technologies={[
           "Python",
           "Pandas",

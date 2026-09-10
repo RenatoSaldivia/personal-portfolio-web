@@ -1,38 +1,40 @@
 ---
 import SkillCard from "../components/SkillCard.astro";
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const skills = [
   {
     name: "HTML",
-    icon: "/icons/skills/HTML5.svg",
+    icon: `${base}/icons/skills/HTML5.svg`,
   },
   {
     name: "CSS",
-    icon: "/icons/skills/CSS.svg",
+    icon: `${base}/icons/skills/CSS.svg`,
   },
   {
     name: "Astro",
-    icon: "/icons/skills/Astro.svg",
+    icon: `${base}/icons/skills/Astro.svg`,
   },
   {
     name: "Python",
-    icon: "/icons/skills/Python.svg",
+    icon: `${base}/icons/skills/Python.svg`,
   },
   {
     name: "MySQL",
-    icon: "/icons/skills/MySQL.svg",
+    icon: `${base}/icons/skills/MySQL.svg`,
   },
   {
     name: "Power BI",
-    icon: "/icons/skills/PowerBI.svg",
+    icon: `${base}/icons/skills/PowerBI.svg`,
   },
   {
     name: "Blender",
-    icon: "/icons/skills/Blender.svg",
+    icon: `${base}/icons/skills/Blender.svg`,
   },
   {
     name: "Photoshop",
-    icon: "/icons/skills/Photoshop.svg",
+    icon: `${base}/icons/skills/Photoshop.svg`,
   },
 ];
 ---

@@ -1,3 +1,7 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
 <section class="hero">
   <div class="hero__inner">
     <div class="hero__content">
@@ -17,7 +21,7 @@
         <a href="#contacto" class="btn btn--secondary">Contactarme</a>
 
         <a
-          href="/documents/Renato_Saldivia_CV_Data_Analyst.pdf"
+          href={`${base}/documents/Renato_Saldivia_CV_Data_Analyst.pdf`}
           class="btn btn--secondary"
           target="_blank"
           rel="noopener noreferrer"
@@ -28,7 +32,7 @@
     </div>
 
     <div class="hero__photo">
-      <img src="/images/Renato.jpg" alt="Renato Saldivia" />
+      <img src={`${base}/images/Renato.jpg`} alt="Renato Saldivia" />
     </div>
   </div>
 </section>

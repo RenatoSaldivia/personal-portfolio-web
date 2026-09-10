@@ -1,13 +1,17 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
 <header class="header">
   <nav class="header__nav">
-    <a href="/" class="header__logo" aria-label="Renato Saldivia">
+    <a href={`${base}/`} class="header__logo" aria-label="Renato Saldivia">
       <span class="header__logo-brace">&#123;</span>
       RS
       <span class="header__logo-brace">&#125;</span>
     </a>
 
     <div class="header__links">
-      <a href="/" class="header__link">Inicio</a>
+      <a href={`${base}/`} class="header__link">Inicio</a>
       <a href="#habilidades" class="header__link">Habilidades</a>
       <a href="#proyectos" class="header__link">Proyectos</a>
       <a href="#contacto" class="header__link">Contacto</a>
