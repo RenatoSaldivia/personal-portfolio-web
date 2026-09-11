@@ -4,20 +4,33 @@ interface Props {
   description: string;
   image: string;
   technologies: string[];
-  github: string;
+  github?: string;
+  url?: string;
   demo?: string;
 }
 
-const { title, description, image, technologies, github, demo } = Astro.props;
+const { title, description, image, technologies, github, url, demo } = Astro.props;
 ---
 
 <article class="project-card">
-  <div class="project-card__image">
-    <img src={image} alt={`Captura del proyecto ${title}`} />
-  </div>
+  {
+    url ? (
+      <a href={url} class="project-card__image-link" aria-label={`Ver caso de estudio de ${title}`}>
+        <div class="project-card__image">
+          <img src={image} alt={`Captura del proyecto ${title}`} loading="lazy" />
+        </div>
+      </a>
+    ) : (
+      <div class="project-card__image">
+        <img src={image} alt={`Captura del proyecto ${title}`} loading="lazy" />
+      </div>
+    )
+  }
 
   <div class="project-card__content">
-    <h3>{title}</h3>
+    <h3>
+      {url ? <a href={url} class="project-card__title-link">{title}</a> : title}
+    </h3>
 
     <p class="project-card__description">
       {description}
@@ -31,42 +44,82 @@ const { title, description, image, technologies, github, demo } = Astro.props;
       }
     </div>
 
-    <div class="project-card__links">
-      <a href={github} target="_blank" rel="noopener noreferrer"> GitHub </a>
-
+    <div class="project-card__actions">
       {
-        demo && (
-          <a href={demo} target="_blank" rel="noopener noreferrer">
-            Ver proyecto
+        url && (
+          <a href={url} class="btn-case">
+            Ver caso de estudio &rarr;
           </a>
         )
       }
+
+      <div class="project-card__secondary-links">
+        {
+          github && (
+            <a href={github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          )
+        }
+        {
+          demo && (
+            <a href={demo} target="_blank" rel="noopener noreferrer">
+              Demo
+            </a>
+          )
+        }
+      </div>
     </div>
   </div>
 </article>
 
 <style>
   .project-card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border: 1px solid #1e293b;
     border-radius: 12px;
     background: #111c30;
+    transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
-  .project-card__image {
+  .project-card:hover {
+    border-color: #334155;
+    transform: translateY(-3px);
+  }
+
+  .project-card__image-link {
+    display: block;
+    text-decoration: none;
+  }
+
+.project-card__image {
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    background: #090e1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .project-card__image img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: cover; /* o 'contain' si prefieres ver todo el gráfico con márgenes */
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover .project-card__image img {
+    transform: scale(1.03);
   }
 
   .project-card__content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .project-card h3 {
@@ -74,10 +127,21 @@ const { title, description, image, technologies, github, demo } = Astro.props;
     font-size: 1.4rem;
   }
 
+  .project-card__title-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .project-card__title-link:hover {
+    color: #60a5fa;
+  }
+
   .project-card__description {
     margin: 0 0 1.25rem;
     color: #cbd5e1;
     line-height: 1.6;
+    flex-grow: 1;
   }
 
   .project-card__technologies {
@@ -95,18 +159,47 @@ const { title, description, image, technologies, github, demo } = Astro.props;
     font-size: 0.85rem;
   }
 
-  .project-card__links {
+  .project-card__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    border-top: 1px solid #1e293b;
+  }
+
+  .btn-case {
+    display: inline-flex;
+    align-items: center;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .btn-case:hover {
+    background: #1d4ed8;
+  }
+
+  .project-card__secondary-links {
     display: flex;
     gap: 1rem;
   }
 
-  .project-card__links a {
-    color: #60a5fa;
+  .project-card__secondary-links a {
+    color: #94a3b8;
     text-decoration: none;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
   }
 
-  .project-card__links a:hover {
+  .project-card__secondary-links a:hover {
     color: white;
   }
 </style>
